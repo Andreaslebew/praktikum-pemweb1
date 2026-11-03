@@ -1,0 +1,344 @@
+/* Tampilan dasar */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    margin: 30px;
+}
+
+h1, h2 {
+    color: #1e3a8a;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Alert / Notifikasi flash */
+.alert {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.alert-success {
+    background-color: #ecfdf5;
+    border: 1px solid #6ee7b7;
+    color: #065f46;
+}
+
+/* Tampilan tabel mahasiswa */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin-top: 15px;
+}
+
+th {
+    background-color: #1d4ed8;
+    color: white;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+}
+
+tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* Tampilan kolom formulir */
+form {
+    max-width: 520px;
+}
+
+form div,
+.form-field {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* Gaya normal input (valid / default) */
+.form-input,
+input[type="text"] {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #1e293b;
+    background-color: #ffffff;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-input:focus,
+input[type="text"]:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Gaya visual input bermasalah (invalid) - border merah & background halus */
+.form-input.is-invalid,
+input[type="text"].is-invalid {
+    border-color: #dc2626 !important;
+    background-color: #fef2f2;
+}
+
+.form-input.is-invalid:focus,
+input[type="text"].is-invalid:focus {
+    outline: none;
+    border-color: #dc2626 !important;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2) !important;
+}
+
+/* Pesan error tepat di bawah input: teks jelas, ukuran & kontras warna nyaman dibaca */
+.field-error {
+    display: block;
+    margin: 6px 0 0 0;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #b91c1c; /* Kontras tinggi (> 6:1) pada background terang */
+    font-weight: 500;
+}
+
+/* Tampilan tombol & tautan */
+button,
+.btn-tambah {
+    display: inline-block;
+    padding: 9px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover,
+.btn-tambah:hover {
+    background-color: #1d4ed8;
+}
+
+/* Tampilan tautan */
+a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form a {
+    display: inline-block;
+    margin-left: 12px;
+    padding: 8px 14px;
+    color: #334155;
+    background-color: #e2e8f0;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    vertical-align: middle;
+    transition: background-color 0.2s ease;
+}
+
+form a:hover {
+    background-color: #cbd5e1;
+    text-decoration: none;
+    color: #0f172a;
+}
+
+/* ===== Halaman Detail Mahasiswa ===== */
+.detail-page {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.detail-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.detail-topbar h1 {
+    margin: 0;
+}
+
+.detail-back {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.detail-back:hover {
+    text-decoration: underline;
+}
+
+.detail-card {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 32px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+/* Bagian foto */
+.detail-photo {
+    text-align: center;
+}
+
+.detail-photo-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #64748b;
+    margin: 0 0 12px;
+}
+
+.detail-photo-frame {
+    background: #f8fafc;
+    border: 2px dashed #bfdbfe;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.detail-photo-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: cover;
+}
+
+.detail-photo-empty {
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 40px 16px;
+    color: #64748b;
+}
+
+.detail-photo-empty span {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.detail-photo-empty p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.detail-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.detail-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.35);
+}
+
+.detail-download svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Bagian informasi */
+.detail-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detail-badge {
+    align-self: flex-start;
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.detail-name {
+    font-size: 28px;
+    color: #0f172a;
+    margin: 0 0 24px;
+    line-height: 1.2;
+}
+
+.detail-list {
+    margin: 0;
+    border-top: 1px solid #e2e8f0;
+}
+
+.detail-item {
+    display: flex;
+    padding: 16px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.detail-item dt {
+    width: 140px;
+    flex-shrink: 0;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.detail-item dd {
+    margin: 0;
+    color: #0f172a;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 640px) {
+    .detail-card {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .detail-photo-frame {
+        max-width: 260px;
+        margin: 0 auto;
+    }
+}
